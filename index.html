@@ -4,37 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <header>
-      <a href="./index.html"
-        ><img
-          src="./img/Vector-min.png"
-          alt="food-sta-logo"
-          width="66"
-          height="52"
-      /></a>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Service</a></li>
-          <li><a href="./menu.html">Menu</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
-      </nav>
-      <button type="button">Order Now</button>
+      <div class="container header-container">
+        <a href="./index.html" class="logo"
+          ><img
+            src="./img/Vector-min.png"
+            alt="food-sta-logo"
+            width="66"
+            height="52"
+        /></a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a class="nav-links" href="./index.html">Home</a></li>
+            <li><a class="nav-links" href="">About</a></li>
+            <li><a class="nav-links" href="">Service</a></li>
+            <li><a class="nav-links" href="./menu.html">Menu</a></li>
+            <li><a class="nav-links" href="">Contact</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="main-button" data-modal-open>Order Now</button>
+      </div>
     </header>
     <main>
-      <section>
-        <h2>Enjoy Your Favorite Food From Anywhere</h2>
-        <p>
+      <section class="hero">
+        <div class="container hero-container">
+          <div class="hero-wrapper">
+        <h2 class="hero-title">Enjoy Your Favorite Food From Anywhere</h2>
+        <p class="hero-text">
           With just a few clicks, you can have your favorite meals delivered
           straight to your doorstep, no matter where you are. Order now and
           enjoy a hassle-free and delicious meal from the comfort of your own
           home.
         </p>
-        <button type="button">Order Now</button>
+        <button type="button" class="main-button" data-modal-open>
+          Order Now
+        </button>
+      </div>
         <img src="./img/pngwing.png" alt="salat" width="528" height="528" />
       </section>
       <section>
@@ -57,7 +78,8 @@
             </p>
           </li>
         </ul>
-        <button type="button">Order Now</button>
+        <button type="button" class="main-button">Order Now</button>
+      </div>
       </section>
       <section>
         <h2>Some of Our Favorites</h2>
@@ -159,11 +181,11 @@
           Food From Anywhere.
         </p>
         <form>
-          <input type="email" placeholder="Enter your email" /><button
-            type="submit"
-          >
-            Subscribe
-          </button>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="main-button"
+          /><button type="submit">Subscribe</button>
         </form>
         <img src="./img/banan-min.png" alt="banan" width="608" height="266" />
       </section>
@@ -184,11 +206,11 @@
         </ul>
         <strong>Subscribe</strong>
         <form>
-          <input type="email" placeholder="Enter your email" /><button
-            type="submit"
-          >
-            Subscribe
-          </button>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="main-button"
+          /><button type="submit">Subscribe</button>
         </form>
         <p>
           By subscribing you agree to with our <a href="">Privacy Policy</a>
@@ -200,6 +222,32 @@
         </ul>
         <p>2022 FoodSta. All right reserved.</p>
       </footer>
+      <div class="backdrop" data-modal>
+        <div class="modal">
+          <button class="modal-close-btn" type="button" data-modal-close>
+            <svg width="11" height="11">
+              <use href="./img/icons.svg#close"></use>
+            </svg>
+          </button>
+          <p class="modal-title">Order Form</p>
+          <form action="">
+            <div class="modal-input-wrap">
+              <lable for="user-name" class="lable-form">Name</lable>
+              <input id="user-name" type="text" class="input-form" placeholder="Your name">
+            </div>
+            <div class="modal-input-wrap">
+              <lable for="user-tel" class="lable-form">Phone number</lable>
+              <input id="user-tel" type="tel" class="input-form" placeholder="+38(0_ _) _ _ _   _ _   _ _">
+            </div>
+            <div class="modal-input-wraper">
+              <lable for="user-email" class="lable-form">E-mail</lable>
+              <input id="user-email" type="email" class="input-form" placeholder="example@gmail.com">
+            </div>
+            <button type="submit" class="modal-btn">Send</button>
+          </form>
+        </div>
+      </div>
     </main>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
